@@ -123,6 +123,7 @@ a.btn {
 .btn:hover,
 a.btn:hover {
     font-style: italic;
+    cursor: pointer;
 }
 
 .btn-disabled {

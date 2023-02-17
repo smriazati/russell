@@ -34,17 +34,17 @@ const checkForm = () => {
 </script>
 
 <template>
-    <form name="contact" netlify action="/contact/success">
-        <input type="hidden" name="form-name" value="contact" />
+    <form name="contact" data-netlify="true" action="/contact/success">
+        <input type="hidden" name="contact" value="contact" />
         <label>Name</label>
-        <input v-model="nameInput" type="text" placeholder="Your name *" />
+        <input v-model="nameInput" type="text" name="name" placeholder="Your name *" />
         <label>Email</label>
-        <input v-model="emailInput" type="text" placeholder="Your email *" />
+        <input v-model="emailInput" type="text" name="email" placeholder="Your email *" />
         <label>Message</label>
-        <textarea v-model="messageInput" placeholder="Your message *"></textarea>
+        <textarea v-model="messageInput" name="message" placeholder="Your message *"></textarea>
         <button :disabled="!validateName() || !validateEmail() || !validateMessage()" :class="`btn`" type="submit"
             @click="checkForm()">Submit</button>
-        <div v-if="!validateName() || !validateEmail() || validateMessage()">
+        <div v-if="!validateName() || !validateEmail() || !validateMessage()">
             <p v-if="!validateName()">Include your name.</p>
             <p v-if="!validateEmail()">Include a valid email address.</p>
             <p v-if="!validateMessage()">Include a valid message.</p>

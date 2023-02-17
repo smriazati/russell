@@ -35,6 +35,7 @@ const checkForm = () => {
 
 <template>
     <form name="contact" netlify action="/contact/success">
+        <input type="hidden" name="form-name" value="contact" />
         <label>Name</label>
         <input v-model="nameInput" type="text" placeholder="Your name *" />
         <label>Email</label>

@@ -75,13 +75,14 @@ definePageMeta({
 .home-page-wrapper .text-wrapper h1 {
     font-size: 60px;
     line-height: 64px;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
 }
 
 .home-page-wrapper .text-wrapper h2 {
     font-size: 36px;
     line-height: 42px;
     margin: 0;
+    margin-bottom: 60px;
 }
 
 .home-page-wrapper .image-wrapper {

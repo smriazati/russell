@@ -10,7 +10,7 @@ const query = groq`
 const { data } = useSanityQuery(query);
 
 useHead({
-    title: 'Projects',
+    title: 'Home',
     bodyAttrs: {
         class: 'index-page'
     }
@@ -53,38 +53,38 @@ definePageMeta({
     min-height: 100vh;
 }
 
-.text-wrapper {
+.home-page-wrapper .text-wrapper {
     flex: 0 0 40%;
     font-weight: 700;
     text-align: left;
     padding: 30px;
 }
 
-.text-wrapper nav ul {
+.home-page-wrapper .text-wrapper nav ul {
     display: flex;
     list-style: none;
     padding: 0;
     margin-top: 30px;
 }
 
-.text-wrapper nav ul li {
+.home-page-wrapper .text-wrapper nav ul li {
     margin-right: 30px;
 }
 
 
-.text-wrapper h1 {
+.home-page-wrapper .text-wrapper h1 {
     font-size: 60px;
     line-height: 64px;
     margin-bottom: 8px;
 }
 
-.text-wrapper h2 {
+.home-page-wrapper .text-wrapper h2 {
     font-size: 36px;
     line-height: 42px;
     margin: 0;
 }
 
-.image-wrapper {
+.home-page-wrapper .image-wrapper {
     flex: 0 0 60%;
     position: relative;
     z-index: 1;
@@ -93,15 +93,16 @@ definePageMeta({
     height: 100vh;
     display: flex;
     align-items: center;
+    padding: 30px;
 }
 
-.image-wrapper figure {
+.home-page-wrapper .image-wrapper figure {
     max-width: 100%;
     max-height: 100%;
     overflow: hidden;
 }
 
-.image-wrapper figure img {
+.home-page-wrapper .image-wrapper figure img {
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;

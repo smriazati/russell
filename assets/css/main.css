@@ -16,6 +16,11 @@ a:visited {
     color: inherit;
 }
 
+a:focus,
+a:focus-visible {
+    outline: 0;
+}
+
 img {
     max-width: 100%;
 }
@@ -45,7 +50,7 @@ img {
     background: #eaeaea;
 }
 
-header {
+header.site-header {
     display: flex;
     justify-content: space-between;
     padding: 12px;
@@ -111,4 +116,9 @@ a.btn {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+.btn:hover,
+a.btn:hover {
+    font-style: italic;
 }

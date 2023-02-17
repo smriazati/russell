@@ -1,6 +1,14 @@
+<script setup>
+useHead({
+    title: 'Contact',
+    bodyAttrs: {
+        class: 'contact-page'
+    }
+})
+</script>
 <template>
     <div class="contact-page-wrapper">
-        <h1>Contact</h1>
+        <ContactHeader />
         <p>Your message has been sent. Thanks!</p>
     </div>
 </template>

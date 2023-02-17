@@ -1,6 +1,6 @@
 <template>
     <div class="default-layout-wrapper">
-        <header>
+        <header class="site-header">
             <h1>
                 <NuxtLink to="/">Russell Favret</NuxtLink>
             </h1>

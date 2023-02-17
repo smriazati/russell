@@ -1,7 +1,7 @@
 <script setup>
 const query = groq`
-*[_type == "videos" && isPublished == true]|order(coalesce(name->orderRank, orderRank)){
-name, slug, id  
+*[_type == "videos" && isPublished == true]|order(orderRank){
+  name, slug, id  
 }
 `;
 const { data } = useSanityQuery(query);

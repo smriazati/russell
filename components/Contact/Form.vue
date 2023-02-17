@@ -34,8 +34,7 @@ const checkForm = () => {
 </script>
 
 <template>
-    <form name="contact" method="POST" data-netlify="true" action="/contact/success"
-        enctype="application/x-www-form-urlencoded">
+    <form name="contact" netlify action="/contact/success">
         <label>Name</label>
         <input v-model="nameInput" type="text" placeholder="Your name *" />
         <label>Email</label>

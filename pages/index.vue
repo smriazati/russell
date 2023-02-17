@@ -50,12 +50,18 @@ definePageMeta({
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    min-height: 100vh;
+}
+
+@media (min-width: 780px) {
+    .home-page-wrapper {
+        min-height: 100vh;
+    }
 }
 
 @media (max-width: 780px) {
     .home-page-wrapper {
         flex-direction: column-reverse;
+        text-align: center;
     }
 }
 
@@ -71,6 +77,12 @@ definePageMeta({
     list-style: none;
     padding: 0;
     margin-top: 30px;
+}
+
+@media (max-width: 780px) {
+    .home-page-wrapper .text-wrapper nav ul {
+        justify-content: center;
+    }
 }
 
 .home-page-wrapper .text-wrapper nav ul li {

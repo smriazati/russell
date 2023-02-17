@@ -10,6 +10,6 @@ useHead({
 <template>
     <div class="contact-page-wrapper">
         <ContactHeader />
-        <ContactForm />
+        <!-- <ContactForm /> -->
     </div>
 </template>

@@ -53,6 +53,12 @@ definePageMeta({
     min-height: 100vh;
 }
 
+@media (max-width: 780px) {
+    .home-page-wrapper {
+        flex-direction: column-reverse;
+    }
+}
+
 .home-page-wrapper .text-wrapper {
     flex: 0 0 40%;
     font-weight: 700;

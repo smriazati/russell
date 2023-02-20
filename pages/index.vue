@@ -1,12 +1,12 @@
 <script setup>
 const query = groq`
-*[_type=="homePage"]{
-  text, subtext, 
-    "image": {
-      "url": image.asset->url
-    }
-}[0]
-`;
+    *[_type=="homePage"]{
+      text, subtext, 
+        "image": {
+          "url": image.asset->url
+        }
+    }[0]
+    `;
 const { data } = useSanityQuery(query);
 
 useHead({
@@ -32,7 +32,7 @@ definePageMeta({
                             <NuxtLink to="/watch" class="btn">Watch</NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink to="/contact" class="btn">Contact</NuxtLink>
+                            <NuxtLink to="/about" class="btn">About</NuxtLink>
                         </li>
                     </ul>
                 </nav>

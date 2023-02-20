@@ -10,7 +10,7 @@
                         <NuxtLink to="/watch">Watch</NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="/contact">Contact</NuxtLink>
+                        <NuxtLink to="/about">About</NuxtLink>
                     </li>
                 </ul>
             </nav>

@@ -1,11 +1,11 @@
 <script setup>
 const query = groq`
-*[_type=="siteMetadata"]{
-  siteTitle,
-  siteDesc,
-  "ogImg": {
-     "url": ogImg.asset->url,
-     "alt": ogImg.asset->altText
+*[_type=="homePage"]{
+  "seo": {
+    "desc": seo.description_short,
+    "img": {
+      "url": seo.featured.asset->url
+    }
   }
 }[0]
 `;
@@ -17,6 +17,11 @@ useHead({
 </script>
 <template>
   <div>
+
+    <Head>
+      <Meta name="description" :content="data?.seo?.desc" />
+      <Meta name="og:image" :content="data?.seo?.img?.url" />
+    </Head>
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>

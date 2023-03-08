@@ -66,6 +66,7 @@ textarea {
     padding: 5px;
     border-radius: 0;
     margin-bottom: 30px;
+    font-family: inherit;
 }
 
 ;

@@ -21,14 +21,6 @@ const { data } = useSanityQuery(query);
     </div>
 </template>
 <style>
-.contact-page-wrapper {
-    display: flex;
-    flex-direction: column;
-    max-width: 680px;
-    margin: 0 auto;
-    text-align: center;
-}
-
 .contact-page-wrapper h1 {
     margin-bottom: 30px;
 }

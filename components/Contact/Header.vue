@@ -13,8 +13,8 @@ const { data } = useSanityQuery(query);
         <header>
             <div class="text-wrapper">
                 <h1>About</h1>
-                <div v-if="data">
-                    <p>{{ data.contact_text }}</p>
+                <div v-if="data?.contact_text">
+                    <SanityContent :blocks="data.contact_text.rte"></SanityContent>
                 </div>
             </div>
         </header>

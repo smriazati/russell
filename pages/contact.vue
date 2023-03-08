@@ -8,8 +8,8 @@ useHead({
 </script>
 <template>
     <div class="contact-page-wrapper">
-        <ContactHeader />
-        <p>Your message has been sent. Thanks!</p>
+        <h1>Contact</h1>
+        <ContactForm></ContactForm>
     </div>
 </template>
 <style>

@@ -1,92 +1,72 @@
+<template>
+    <div>
+        <div>
+            <div v-if="!showThanks && !showError" class="form-wrapper">
+                <form id="contact" name="contact" method="post" netlify netlify-honeypot="bot-field" data-netlify="true"
+                    @submit.prevent="onFormSubmit">
+                    <input type="hidden" name="form-name" value="contact">
+                    <label for="name">Name *</label>
+                    <input type="text" name="name" required>
+                    <label for="email">Email *</label>
+                    <input type="email" name="email" required>
+                    <label for="message">Message *</label>
+                    <textarea name="message" rows="5"></textarea>
+                    <button class="btn">Submit</button>
+                </form>
+            </div>
+            <div v-if="showThanks" class="confirmation-wrapper">
+                <p>Thanks for reaching out! Your message has been submitted.</p>
+            </div>
+            <div v-if="showError" class="error-wrapper">
+                <p>Sorry, something has gone wrong. Please try again later, or send an email to sarahriazati@gmail.com.</p>
+            </div>
+        </div>
+    </div>
+</template>
 <script setup>
-import { ref } from 'vue'
+const showThanks = ref(false)
+const showError = ref(false)
 
-const nameInput = ref('')
-const emailInput = ref('')
-const messageInput = ref('')
-
-const validateName = () => {
-    if (!nameInput) { return false }
-    if (nameInput.value.length < 1) { return false }
-    return true
+const onFormSubmit = (e) => {
+    let myForm = document.getElementById("contact");
+    let formData = new FormData(myForm);
+    fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+    })
+        .then(result => showThanks.value = true)
+        .catch((error) => {
+            console.log(error);
+            showError.value = true
+        });
 }
-const validateEmail = () => {
-    if (!emailInput) { return false }
-    const validation = emailInput.value.includes("@") && emailInput.value.includes('.');
-    if (validation) {
-        return true;
-    } else {
-        return false;
-    }
-}
-const validateMessage = () => {
-    if (!messageInput) { return false }
-    if (messageInput.value.length < 1) { return false }
-    return true
-}
-
-const checkForm = () => {
-    const isFormValid = validateName() && validateEmail() && validateMessage()
-    console.log(isFormValid);
-    return isFormValid ? true : false
-}
-
+useHead({
+    title: 'Contact',
+})
 </script>
 
-<template>
-    <form name="contact" method="POST" data-netlify="true" enctype="application/x-www-form-urlencoded"
-        action="/contact/success">
-        <input type="hidden" name="form-name" value="contact" />
-        <label>Name</label>
-        <input v-model="nameInput" type="text" name="name" placeholder="Your name *" />
-        <label>Email</label>
-        <input v-model="emailInput" type="text" name="email" placeholder="Your email *" />
-        <label>Message</label>
-        <textarea v-model="messageInput" name="message" placeholder="Your message *"></textarea>
-        <button :disabled="!validateName() || !validateEmail() || !validateMessage()" :class="`btn`" type="submit"
-            @click="checkForm()">Submit</button>
-        <div v-if="!validateName() || !validateEmail() || !validateMessage()">
-            <p v-if="!validateName()">Include your name.</p>
-            <p v-if="!validateEmail()">Include a valid email address.</p>
-            <p v-if="!validateMessage()">Include a valid message.</p>
-        </div>
-    </form>
-</template>
-
-<style>
+<style scoped>
 form {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+
+}
+
+input {
+    height: 32px;
 }
 
 input,
 textarea {
-    outline: 0;
-    border: 1px solid #000;
+    outline: none;
+    border: 1px solid black;
+    padding: 5px;
     border-radius: 0;
-    padding: 8px;
-    font-family: inherit;
-    font-size: 16px;
-    background: #fff;
-    color: #000;
-    transition: .3s ease all;
-    max-width: 100%;
+    margin-bottom: 30px;
 }
 
-input:focus,
-textarea:focus {
-    background: #000;
-    color: #fff;
-}
-
-label {
-    font-weight: bold;
-    margin-bottom: 4px;
-}
-
-input,
-textarea,
-button {
-    margin-bottom: 18px;
-}
+;
 </style>

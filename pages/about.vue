@@ -40,6 +40,7 @@ const serializers = {
 
 
 .wrapper h1 {
+    text-align: center;
     margin-bottom: 30px;
 }
 </style>

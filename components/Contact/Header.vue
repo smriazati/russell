@@ -12,7 +12,7 @@ const { data } = useSanityQuery(query);
     <div class="contact-page-wrapper">
         <header>
             <div class="text-wrapper">
-                <h1>About</h1>
+                <h1>Contact</h1>
                 <div v-if="data?.contact_text">
                     <SanityContent :blocks="data.contact_text.rte"></SanityContent>
                 </div>

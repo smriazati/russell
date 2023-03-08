@@ -34,9 +34,9 @@ definePageMeta({
                         <li>
                             <NuxtLink to="/about" class="btn">About</NuxtLink>
                         </li>
-                        <!-- <li>
-                                <NuxtLink to="/contact" class="btn">Contact</NuxtLink>
-                            </li> -->
+                        <li>
+                            <NuxtLink to="/contact" class="btn">Contact</NuxtLink>
+                        </li>
                     </ul>
                 </nav>
             </div>
